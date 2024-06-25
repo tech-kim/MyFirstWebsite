@@ -1,17 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get all rows in the table
-    let rows = document.querySelectorAll('.team-stats tbody tr');
+    // Get the table body
+    let tbody = document.getElementById('team-stats-body');
 
-    // Iterate through each row
+    // Convert the rows to an array for sorting
+    let rows = Array.from(tbody.rows);
+
+    // Sort rows based on the win rate (last column)
+    rows.sort(function(rowA, rowB) {
+        let winRateA = parseFloat(rowA.cells[3].textContent);
+        let winRateB = parseFloat(rowB.cells[3].textContent);
+
+        // Sort in descending order
+        return winRateB - winRateA;
+    });
+
+    // Clear existing rows in tbody
+    tbody.innerHTML = '';
+
+    // Append sorted rows back to tbody
     rows.forEach(function(row) {
-        // Get wins and losses from the row
-        let wins = parseInt(row.cells[1].textContent); // Wins
-        let losses = parseInt(row.cells[2].textContent); // Losses
-
-        // Calculate win rate
-        let winRate = (wins / (wins + losses)) * 100;
-
-        // Update the win rate cell in the row
-        row.cells[3].textContent = winRate.toFixed(1); // Update to one decimal place
+        tbody.appendChild(row);
     });
 });
