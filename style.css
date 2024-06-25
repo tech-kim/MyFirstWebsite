@@ -100,12 +100,9 @@ h1 {
     margin-top: 20px;
 }
 
-.team-stats, .team-stats th, .team-stats td {
+.team-stats th,
+.team-stats td {
     border: 1px solid black;
-    border-spacing: 0;
-}
-
-.team-stats th, .team-stats td {
     padding: 12px 15px; /* 더 넓은 패딩으로 간격 확보 */
     text-align: center; /* 텍스트 가운데 정렬 */
 }
@@ -114,7 +111,7 @@ h1 {
     background-color: #f4f4f4;
 }
 
-/* 화면 크기가 500px보다 작은 경우의 반응형 디자인 */
+/* Responsive adjustments */
 @media (max-width: 500px) {
     body {
         flex-direction: column;
