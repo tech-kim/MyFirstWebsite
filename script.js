@@ -9,22 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
         let losses = parseInt(row.cells[2].textContent); // Losses
 
         // Calculate win rate
-        if (wins + losses > 0) {
-            let winRate = (wins / (wins + losses)) * 100;
+        let winRate = (wins / (wins + losses)) * 100;
 
-            // Round winRate to one decimal place
-            winRate = winRate.toFixed(1);
-
-            // Update the win rate cell in the row
-            row.cells[3].textContent = winRate + '%'; // Update to one decimal place and add '%' sign
-        } else {
-            // If there are no games played, display a default message or handle as needed
-            row.cells[3].textContent = '-';
-        }
-        
-        // Debugging logs
-        console.log('Wins:', wins);
-        console.log('Losses:', losses);
-        console.log('Win Rate:', winRate);
+        // Update the win rate cell in the row
+        row.cells[3].textContent = winRate.toFixed(1); // Update to one decimal place
     });
 });
