@@ -20,7 +20,7 @@ h1 {
 /* Styling for the <ol> element to look like a left menu bar */
 .menu-bar {
     border-right: 1px solid gray;
-    width: 100px;
+    width: 400px;
     margin: 0;
     padding: 20px;
     padding-right: 5px;
