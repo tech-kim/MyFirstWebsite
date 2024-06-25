@@ -13,13 +13,15 @@ body {
 
 /* Styling for the <h1> element */
 h1 {
-    font-size: 2em;
-    color: #4CAF50; /* Choose a color that stands out */
+    font-size: 2.5em;
+    color: #333; /* Darker color for sophistication */
     text-align: center;
     margin: 0; /* Set margin to 0 */
     padding: 10px 0; /* Set padding with some top and bottom space */
-    border-bottom: 1px solid #000; /* Solid 1px line at the bottom */
-    grid-column: span 2; /* Span across both columns */
+    border-bottom: 1px solid #ccc; /* Lighter border for a subtle separation */
+    font-family: 'Georgia', serif; /* Sophisticated font */
+    letter-spacing: 2px; /* Increased letter spacing */
+    text-transform: uppercase; /* Uppercase letters */
     background-color: #fff; /* Background color to cover content below */
     z-index: 1000; /* Ensure it stays on top */
 }
@@ -30,7 +32,7 @@ h1 {
     padding: 0; /* Set padding to 0 */
     margin: 0; /* Set margin to 0 */
     background-color: #f4f4f4; /* Light background color */
-    border-right: 1px solid #000; /* Solid 1px line on the right */
+    border-right: 1px solid #ccc; /* Lighter border */
     overflow: auto; /* Scroll if needed */
     z-index: 999; /* Ensure it stays below the header but above content */
 }
@@ -56,6 +58,8 @@ h1 {
 .content {
     padding: 20px;
     overflow: auto; /* Enable scrolling for content */
+    display: flex;
+    flex-direction: column-reverse; /* Newest records at the top */
 }
 
 /* Styling for the match results table */
@@ -115,7 +119,7 @@ table.table2 th, table.table2 td {
         width: 100%; /* Full width for mobile */
         height: auto; /* Automatic height */
         border-right: none; /* Remove the right border */
-        border-bottom: 1px solid #000; /* Add bottom border */
+        border-bottom: 1px solid #ccc; /* Add bottom border */
         position: static; /* Position it normally */
     }
 
