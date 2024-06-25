@@ -3,6 +3,9 @@
 /* General styling */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent the entire page from scrolling */
 }
 
 /* Styling for the <h1> element */
@@ -11,8 +14,12 @@ h1 {
     color: #4CAF50; /* Choose a color that stands out */
     text-align: center;
     margin: 0; /* Set margin to 0 */
-    padding: 0; /* Set padding to 0 */
+    padding: 10px 0; /* Set padding with some top and bottom space */
     border-bottom: 1px solid #000; /* Solid 1px line at the bottom */
+    position: fixed; /* Fixed position at the top */
+    width: 100%; /* Full width */
+    background-color: #fff; /* Background color to cover content below */
+    z-index: 1000; /* Ensure it stays on top */
 }
 
 /* Styling for the <ol> element to look like a left menu bar */
@@ -23,9 +30,11 @@ h1 {
     width: 200px; /* Fixed width for the menu bar */
     background-color: #f4f4f4; /* Light background color */
     position: fixed; /* Fixed position on the left */
-    height: 100%; /* Full height */
+    top: 60px; /* Below the fixed header */
+    height: calc(100% - 60px); /* Full height minus header height */
     overflow: auto; /* Scroll if needed */
     border-right: 1px solid #000; /* Solid 1px line on the right */
+    z-index: 999; /* Ensure it stays below the header but above content */
 }
 
 .menu-bar li {
@@ -48,7 +57,9 @@ h1 {
 /* Styling for the content area */
 .content {
     margin-left: 220px; /* Space for the fixed menu */
-    padding: 20px;
+    padding: 80px 20px 20px; /* Padding with space for fixed header */
+    height: calc(100vh - 80px); /* Full height minus header height */
+    overflow: auto; /* Enable scrolling for content */
 }
 
 /* Styling for the match results table */
@@ -95,4 +106,23 @@ table.table1 th, table.table1 td {
 
 table.table2 th, table.table2 td {
     background-color: #ffe0b2; /* Light orange background */
+}
+
+/* Responsive design for screens smaller than 500px */
+@media (max-width: 500px) {
+    .menu-bar {
+        width: 100%; /* Full width for mobile */
+        height: auto; /* Automatic height */
+        border-right: none; /* Remove the right border */
+        position: static; /* Position it normally */
+    }
+
+    .content {
+        margin-left: 0; /* Remove left margin */
+        padding: 60px 10px 10px; /* Adjust padding for mobile */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Adjust font size for mobile */
+    }
 }
