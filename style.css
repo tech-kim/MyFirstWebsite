@@ -24,6 +24,7 @@ h1 {
 
 /* Styling for the <ol> element to look like a left menu bar */
 .menu-bar {
+    float: left;
     list-style-type: none; /* Remove default numbering */
     padding: 0; /* Set padding to 0 */
     margin: 0; /* Set margin to 0 */
