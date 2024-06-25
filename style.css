@@ -69,6 +69,18 @@ th {
     background-color: #f4f4f4;
 }
 
+/* Dividing lines and section spacing */
 tr:not(:last-child) {
     border-bottom: 2px solid #ddd; /* Dividing line between rows */
+}
+
+/* Styling for the <h3> tag to display the date */
+.date-header {
+    text-align: right;
+    margin: 20px 0; /* Margin for spacing */
+}
+
+/* Separate each table section with margin */
+.table-section {
+    margin-bottom: 40px; /* Space between sections */
 }
