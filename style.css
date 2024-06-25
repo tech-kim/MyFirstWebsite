@@ -1,37 +1,74 @@
 /* styles.css */
 
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
 /* Styling for the <h1> element */
 h1 {
     font-size: 2em;
     color: #4CAF50; /* Choose a color that stands out */
     text-align: center;
     margin-top: 20px;
-    font-family: Arial, sans-serif;
 }
 
 /* Styling for the <ol> element to look like a left menu bar */
-ol {
+.menu-bar {
     list-style-type: none; /* Remove default numbering */
     padding: 0;
     margin: 0;
     width: 200px; /* Fixed width for the menu bar */
     background-color: #f4f4f4; /* Light background color */
-    font-family: Arial, sans-serif;
+    position: fixed; /* Fixed position on the left */
+    height: 100%; /* Full height */
+    overflow: auto; /* Scroll if needed */
 }
 
-ol li {
+.menu-bar li {
     display: block;
     color: #000; /* Text color */
     padding: 10px 15px;
     text-decoration: none;
 }
 
-ol li a {
+.menu-bar li a {
     text-decoration: none;
     color: inherit;
     display: block;
 }
 
-ol li:hover {
+.menu-bar li:hover {
     background-color: #ddd; /* Highlight on hover */
+}
+
+/* Styling for the content area */
+.content {
+    margin-left: 220px; /* Space for the fixed menu */
+    padding: 20px;
+}
+
+/* Styling for the match results table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 12px 15px; /* Increased padding for better spacing */
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tr:not(:last-child) {
+    border-bottom: 2px solid #ddd; /* Dividing line between rows */
 }
