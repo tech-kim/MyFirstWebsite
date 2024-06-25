@@ -5,28 +5,34 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Prevent the entire page from scrolling */
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 200px 1fr;
+    height: 100vh;
 }
 
 /* Styling for the <h1> element */
 h1 {
-    font-size: 45px;
+    font-size: 2em;
+    color: #4CAF50; /* Choose a color that stands out */
     text-align: center;
-    border-bottom: 1px solid gray;
-    margin: 0;
-    padding: 20px;
+    margin: 0; /* Set margin to 0 */
+    padding: 10px 0; /* Set padding with some top and bottom space */
+    border-bottom: 1px solid #000; /* Solid 1px line at the bottom */
+    grid-column: span 2; /* Span across both columns */
+    background-color: #fff; /* Background color to cover content below */
+    z-index: 1000; /* Ensure it stays on top */
 }
 
 /* Styling for the <ol> element to look like a left menu bar */
 .menu-bar {
-    border-right: 1px solid gray;
-    width: 400px;
-    margin: 0;
-    padding: 20px;
-    padding-right: 5px;
-    line-height: 70px;
-    font-size: 16px;
-    font-weight: bold;
+    list-style-type: none; /* Remove default numbering */
+    padding: 0; /* Set padding to 0 */
+    margin: 0; /* Set margin to 0 */
+    background-color: #f4f4f4; /* Light background color */
+    border-right: 1px solid #000; /* Solid 1px line on the right */
+    overflow: auto; /* Scroll if needed */
+    z-index: 999; /* Ensure it stays below the header but above content */
 }
 
 .menu-bar li {
@@ -48,9 +54,7 @@ h1 {
 
 /* Styling for the content area */
 .content {
-    margin-left: 220px; /* Space for the fixed menu */
-    padding: 80px 20px 20px; /* Padding with space for fixed header */
-    height: calc(100vh - 80px); /* Full height minus header height */
+    padding: 20px;
     overflow: auto; /* Enable scrolling for content */
 }
 
@@ -102,16 +106,22 @@ table.table2 th, table.table2 td {
 
 /* Responsive design for screens smaller than 500px */
 @media (max-width: 500px) {
+    body {
+        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-rows: auto auto 1fr; /* Adjust rows for header, menu, and content */
+    }
+
     .menu-bar {
         width: 100%; /* Full width for mobile */
         height: auto; /* Automatic height */
         border-right: none; /* Remove the right border */
+        border-bottom: 1px solid #000; /* Add bottom border */
         position: static; /* Position it normally */
     }
 
     .content {
         margin-left: 0; /* Remove left margin */
-        padding: 60px 10px 10px; /* Adjust padding for mobile */
+        padding: 10px; /* Adjust padding for mobile */
     }
 
     h1 {
